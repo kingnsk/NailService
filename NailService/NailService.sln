@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NailService", "NailService\NailService.csproj", "{703B5E37-01E7-421D-AB0B-220457B9DF8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NailService.Data", "NailService.Data\NailService.Data.csproj", "{1E939083-B566-4ABE-9A2E-1E5F7C1C4025}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7A406134-970C-433F-BD18-97070FACA773}"
+	ProjectSection(SolutionItems) = preProject
+		ef.readme.txt = ef.readme.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{703B5E37-01E7-421D-AB0B-220457B9DF8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{703B5E37-01E7-421D-AB0B-220457B9DF8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{703B5E37-01E7-421D-AB0B-220457B9DF8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{703B5E37-01E7-421D-AB0B-220457B9DF8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E939083-B566-4ABE-9A2E-1E5F7C1C4025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E939083-B566-4ABE-9A2E-1E5F7C1C4025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E939083-B566-4ABE-9A2E-1E5F7C1C4025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E939083-B566-4ABE-9A2E-1E5F7C1C4025}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F734AC7-B400-46C0-B7B4-9E49B80828F6}
+	EndGlobalSection
+EndGlobal
