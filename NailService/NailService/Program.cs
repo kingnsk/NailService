@@ -1,4 +1,7 @@
 using Microsoft.AspNetCore.HttpLogging;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Scaffolding;
+using NailService.Data;
 using NLog.Web;
 
 namespace NailService
@@ -26,6 +29,15 @@ namespace NailService
                 logging.ClearProviders();
                 logging.AddConsole();
             }).UseNLog(new NLogAspNetCoreOptions() { RemoveLoggerFactoryFilter = true });
+
+            #endregion
+
+            #region Configure EF DBContext Service (CardStorageService Database)
+
+            builder.Services.AddDbContext<NailSeviceDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration["Settings:DatabaseOptions:ConnectionString"]);
+            });
 
             #endregion
 

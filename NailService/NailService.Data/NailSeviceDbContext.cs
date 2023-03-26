@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NailService.Data
 {
-    internal class NailSeviceDbContext : DbContext
+    public class NailSeviceDbContext : DbContext
     {
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<TypeOfWork> TypeOfWorks { get; set; }

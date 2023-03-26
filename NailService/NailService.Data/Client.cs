@@ -35,7 +35,7 @@ namespace NailService.Data
         [StringLength(255)]
         public string? Comment { get; set; }
 
-        [InverseProperty(nameof(TypeOfWork.WorkId))]
+        [InverseProperty(nameof(TypeOfWork.Client))]
         public virtual ICollection<TypeOfWork> TypeOfWorks { get; set; } = new HashSet<TypeOfWork>();
 
         [InverseProperty(nameof(Appountment.Client))]
