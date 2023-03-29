@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Scaffolding;
 using NailService.Data;
+using NailService.Services;
+using NailService.Services.Impl;
 using NLog.Web;
 
 namespace NailService
@@ -38,6 +40,14 @@ namespace NailService
             {
                 options.UseSqlServer(builder.Configuration["Settings:DatabaseOptions:ConnectionString"]);
             });
+
+            #endregion
+
+            #region Configure Repository Services
+
+            builder.Services.AddScoped<IClientRepository, ClientRepository>();
+            builder.Services.AddScoped<ITypeOfWorkRepository, TypeOfWorkRepository>();
+            builder.Services.AddScoped<IAppountmentRepository, AppountmentRepository>();
 
             #endregion
 
