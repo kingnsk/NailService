@@ -47,7 +47,8 @@ namespace NailService.Services.Impl
 
         public Client? GetById(int id) 
         {
-            return _dbContext.Clients.FirstOrDefault(client => client.ClientId == id);
+            var response = _dbContext.Clients.FirstOrDefault(client => client.ClientId == id);
+            return response;
         }
 
         public IList<Client> GetAll()

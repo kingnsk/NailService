@@ -12,5 +12,9 @@ namespace NailService.Models.Requests
         public DateTime TimeOfReceipt { get; set; }
 
         public string? Comment { get; set; }
+
+        public int  ClientId { get; set; }
+
+        public int WorkId { get; set; }
     }
 }

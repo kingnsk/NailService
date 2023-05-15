@@ -59,7 +59,7 @@ namespace NailService.Services.Impl
             if (work == null)
                 throw new KeyNotFoundException();
             work.TypeOfService = item.TypeOfService;
-            work.Client = item.Client;
+            work.SubService = item.SubService;
 
             _dbContext.Update(work);
             _dbContext.SaveChanges();

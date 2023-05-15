@@ -73,7 +73,7 @@ namespace NailService.Controllers
         public IActionResult GetAll() =>
             Ok(_clientRepository.GetAll());
 
-        [HttpGet("get/{id}")]
+        [HttpGet("get/{clientId}")]
         [ProducesResponseType(typeof(Client), StatusCodes.Status200OK)]
         public IActionResult GetById([FromRoute] int clientId) =>
             Ok(_clientRepository.GetById(clientId));
