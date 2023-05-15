@@ -34,11 +34,13 @@ namespace NailService.Controllers
         [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
         public IActionResult Create([FromBody] CreateTypeOfWorkRequest createTypeOfWorkRequest)
         {
-            _logger.LogInformation("Create new type of Work.");
+            _logger.LogInformation($"Create new type of Work.");
+
             return Ok(_typeOfWorkRepository.Add(new TypeOfWork
             {
-                TypeOfService = createTypeOfWorkRequest.TypeOfService
-            }));
+                TypeOfService = createTypeOfWorkRequest.TypeOfService,
+                SubService = createTypeOfWorkRequest.SubService
+            })) ;
         }
 
         [HttpPut("update")]
@@ -48,8 +50,9 @@ namespace NailService.Controllers
             _typeOfWorkRepository.Update(new TypeOfWork
             {
                 TypeOfService = updateTypeOfWorkRequest.TypeOfService,
-                WorkId = updateTypeOfWorkRequest.WorkId,
-                ClientId = updateTypeOfWorkRequest.ClientId
+                SubService = updateTypeOfWorkRequest.SubService,
+                WorkId = updateTypeOfWorkRequest.WorkId
+
             });
             return Ok();
         }
@@ -67,7 +70,7 @@ namespace NailService.Controllers
         public IActionResult GetAll() =>
             Ok(_typeOfWorkRepository.GetAll());
 
-        [HttpGet("get/{id}")]
+        [HttpGet("get/{typeOfWorkId}")]
         [ProducesResponseType(typeof(TypeOfWork), StatusCodes.Status200OK)]
         public IActionResult GetById([FromRoute] int typeOfWorkId) =>
             Ok(_typeOfWorkRepository.GetById(typeOfWorkId));

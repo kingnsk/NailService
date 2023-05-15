@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NailService.Data;
 
@@ -11,9 +12,11 @@ using NailService.Data;
 namespace NailService.Data.Migrations
 {
     [DbContext(typeof(NailSeviceDbContext))]
-    partial class NailSeviceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230413124416_Update_DB_Schema_v0.1")]
+    partial class Update_DB_Schema_v01
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

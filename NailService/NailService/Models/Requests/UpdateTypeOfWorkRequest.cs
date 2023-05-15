@@ -7,8 +7,8 @@ namespace NailService.Models.Requests
     {
         public int WorkId { get; set; }
 
-        public int ClientId { get; set; }
+        public string TypeOfService { get; set; }
 
-        public string? TypeOfService { get; set; }
+        public string? SubService { get; set; }
     }
 }

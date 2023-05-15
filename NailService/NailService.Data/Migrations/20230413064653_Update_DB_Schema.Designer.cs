@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NailService.Data;
 
@@ -11,9 +12,11 @@ using NailService.Data;
 namespace NailService.Data.Migrations
 {
     [DbContext(typeof(NailSeviceDbContext))]
-    partial class NailSeviceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230413064653_Update_DB_Schema")]
+    partial class Update_DB_Schema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,12 +102,10 @@ namespace NailService.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WorkId"));
 
-                    b.Property<string>("SubService")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
 
                     b.Property<string>("TypeOfService")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 

@@ -40,7 +40,9 @@ namespace NailService.Controllers
                 CreatedAt = createAppountmentRequest.CreatedAt,
                 DateOfReceipt = createAppountmentRequest.DateOfReceipt,
                 TimeOfReceipt = createAppountmentRequest.TimeOfReceipt,
-                Comment = createAppountmentRequest.Comment
+                Comment = createAppountmentRequest.Comment,
+                ClientId = createAppountmentRequest.ClientId,
+                WorkId = createAppountmentRequest.WorkId
             }));
         }
 
@@ -74,7 +76,7 @@ namespace NailService.Controllers
         public IActionResult GetAll() =>
             Ok(_appountmentRepository.GetAll());
 
-        [HttpGet("get/{id}")]
+        [HttpGet("get/{appountmentId}")]
         [ProducesResponseType(typeof(Appountment), StatusCodes.Status200OK)]
         public IActionResult GetById([FromRoute] int appountmentId) =>
             Ok(_appountmentRepository.GetById(appountmentId));
