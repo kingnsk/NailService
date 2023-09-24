@@ -1,4 +1,5 @@
-﻿using NailService.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using NailService.Data;
 using System.Security.Cryptography;
 
 namespace NailService.Services.Impl
@@ -54,6 +55,8 @@ namespace NailService.Services.Impl
         public IList<Client> GetAll()
         {
             return _dbContext.Clients.ToList();
+            //var clients = _dbContext.Clients.Include(p => p.Appountments);
+            //return clients.ToList();
         }
 
         public void Update(Client item)
