@@ -1,4 +1,5 @@
-﻿using NailService.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using NailService.Data;
 
 namespace NailService.Services.Impl
 {
@@ -43,7 +44,10 @@ namespace NailService.Services.Impl
 
         public IList<Appountment> GetAll()
         {
-            return _dbContext.Appountments.ToList();
+            var appountments = _dbContext.Appountments.Include(w => w.TypeOfWork).Include(c=>c.Client);
+
+            //return _dbContext.Appountments.ToList();
+            return appountments.ToList();
         }
 
         public Appountment? GetById(int id)
